@@ -1,0 +1,8 @@
+.background{
+    height: 100px;
+    width: 100%;
+    background: pink;
+    background-image: url('../../../image/header-bg.jpg');
+    background-size: 10%;
+    /* background-repeat: no-repeat; */
+}

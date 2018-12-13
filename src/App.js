@@ -1,26 +1,22 @@
+/*
+ * @Author: zhuyu 
+ * @Date: 2018-12-13 17:11:49 
+ * @Last Modified by: zhuyu
+ * @Last Modified time: 2018-12-13 17:12:30
+ */
+
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
+//css
 import './App.css';
+
+//
+import Router from './components/Router';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Router />
     );
   }
 }
