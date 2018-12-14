@@ -1,26 +1,7 @@
 import React from 'react';
-import { Layout, Menu, Icon } from 'antd';
-const { Header, Sider, Content } = Layout;
+import { Link, NavLink } from 'react-router-dom';
 
-// const Sider = () => {
-//     return(
-//         <Layout>
-//           <Sider>
-//             <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
-//               <Menu.Item key="1">
-//                 <span>nav 1</span>
-//               </Menu.Item>
-//               <Menu.Item key="2">
-//                 <span>nav 2</span>
-//               </Menu.Item>
-//               <Menu.Item key="3">
-//                 <span>nav 3</span>
-//               </Menu.Item>
-//             </Menu>
-//           </Sider>
-//         </Layout>
-//     )
-// }
+import './index.css';
 class SiderNav extends React.Component{
     constructor(props){
         super(props)
@@ -28,31 +9,23 @@ class SiderNav extends React.Component{
     }
     render(){
         return(
-            <div style={{height:'100%'}}>
-                <Layout>
-                    <Sider>
-                        <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
-                            <Menu.Item key="1">
-                                <span>nav 1</span>
-                            </Menu.Item>
-                            <Menu.Item key="2">
-                                <span>nav 2</span>
-                            </Menu.Item>
-                            <Menu.Item key="3">
-                                <span>nav 3</span>
-                            </Menu.Item>
-                            <Menu.Item key="1">
-                                <span>nav 1</span>
-                            </Menu.Item>
-                            <Menu.Item key="2">
-                                <span>nav 2</span>
-                            </Menu.Item>
-                            <Menu.Item key="3">
-                                <span>nav 3</span>
-                            </Menu.Item>
-                        </Menu>
-                    </Sider>
-                </Layout>
+            <div style={{height:'100%',width: 200,background:'red',float:'left'}}>
+                <ul className='ul'>
+                    <Link to="/">
+                        <li style={{marginTop:0}}>
+                            one
+                        </li>
+                    </Link>
+                    <Link to="/test">
+                        <li>two</li>
+                    </Link>
+                    <li>three</li>
+                    <li>four</li>
+                    <li>five</li>
+                    <li>six</li>
+                    <li>seven</li>
+                    <li>eight</li>
+                </ul>
             </div>
         )
     }

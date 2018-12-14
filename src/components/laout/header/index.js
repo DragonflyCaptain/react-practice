@@ -9,7 +9,7 @@ class Header extends React.Component {
     return (
       <div>
         <div className="background">
-
+          我是header
         </div>
       </div>
     )
