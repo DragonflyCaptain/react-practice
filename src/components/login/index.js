@@ -2,7 +2,7 @@
  * @Author: zhuyu 
  * @Date: 2018-12-14 10:57:11 
  * @Last Modified by: zhuyu
- * @Last Modified time: 2018-12-14 18:52:39
+ * @Last Modified time: 2018-12-21 14:15:30
  */
 
 import React,{ Component } from 'react';
@@ -10,43 +10,16 @@ import React,{ Component } from 'react';
 
 import { Input, Button, Icon, message } from 'antd';
 
-import './index.css'
+import './index.css';
 // import {debounce} from '../debounce/index';
-
-function name(){
-  console.log('OOOO')
-}
-function debounce(func, wait, immediate) {
-  // console.log("asdasd")
-  let timeout, result;
-  return function(){
-    // console.log('1234567')
-      let context = this;
-      let args = arguments;
-      // console.log("asdasd",args)
-      if(timeout) clearTimeout(timeout);
-      if(immediate){
-          let callNow = !timeout;
-          timeout = setTimeout(function(){
-              timeout = null;
-          },wait)
-          if(callNow) result = func.apply(context, args)
-      }else{
-          timeout = setTimeout(function(){
-              func.apply(context,args)
-          },wait);
-      }
-      // console.log('IUYTRE',context)
-      return result;
-  }
-}
 class Login extends Component{
     constructor(props){
         super(props)
         this.state={
-          userName: '',
-          passWord: '',
+          userName: 'guest',
+          passWord: 'admin',
           login: true,
+          loading: false,
         }
     }
     componentDidMount(){
@@ -56,12 +29,20 @@ class Login extends Component{
       })
     }
     login(){
-      console.log('222')
       const { userName,passWord } = this.state;
+      this.setState({
+        loading: true
+      })
       if(userName==='guest'&&passWord==='admin'){
-        message.success('登录成功');
         sessionStorage.setItem('userName',userName);
-        // this.props.history.push('/');
+        setTimeout(()=>{
+          this.setState({
+            loading: false
+          })
+          message.success('登录成功');
+          this.props.history.push('/');
+          
+        },2000)
         
       }else if( userName==='' || passWord==='' ){
         return message.error('请输入账号密码!')
@@ -70,19 +51,10 @@ class Login extends Component{
       }
     }
     keyDown(e){
-      console.log('e',e)
       if(e.keyCode === 13){
         this.login()
       }
       
-    }
-    test(){
-      var that = this;
-      console.log('我被点击了')
-      debounce(name,1000,true)
-    }
-    test2(){
-      console.log('点击咯')
     }
     render(){
       const { userName,passWord } = this.state;
@@ -114,6 +86,7 @@ class Login extends Component{
                 onChange={(e)=>this.setState({
                   passWord:e.target.value
                 })}
+                type="password"
               />
             </div>
 
@@ -123,9 +96,8 @@ class Login extends Component{
             </div>
 
             <div>
-              <Button className="btn" onClick={()=>debounce(this.login,1000,false)}>登录</Button>
+              <Button className="btn" loading={this.state.loading} onClick={()=>this.login()}>登录</Button>
             </div>
-            <Button onClick={()=>this.test()}>点我</Button>
           </div>
         </div>
       )

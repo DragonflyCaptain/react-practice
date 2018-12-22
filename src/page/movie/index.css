@@ -1,0 +1,27 @@
+.img{
+    width: 250px;
+    height: 300px;
+    margin-left: 25px;
+}
+.movieContent{
+    width: 1200px;
+    height: 400px;
+    background: red;
+    /* position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 200px;
+    right: 0;
+    margin: auto; */
+    display: flex;
+}
+.test{
+    width: 300px;
+    height: 420px;
+    background: pink;
+}
+.text{
+    font-size: 20px;
+    text-align: center;
+    margin-top: 10px;
+}

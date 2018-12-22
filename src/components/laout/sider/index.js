@@ -1,24 +1,25 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import './index.css';
-class SiderNav extends React.Component{
-    constructor(props){
-        super(props)
 
-    }
+const styles = {textDecoration:'none'}
+class SiderNav extends React.Component{
     render(){
         return(
-            <div style={{height:'100%',width: 200,background:'red',float:'left'}}>
+            <div style={{}}>
                 <ul className='ul'>
-                    <Link to="/">
+                    <NavLink to="/" activeStyle={styles}>
                         <li style={{marginTop:0}}>
                             one
                         </li>
-                    </Link>
-                    <Link to="/test">
+                    </NavLink>
+                    <NavLink 
+                        to="/test"
+                        activeStyle={styles}
+                    >
                         <li>two</li>
-                    </Link>
+                    </NavLink>
                     <li>three</li>
                     <li>four</li>
                     <li>five</li>

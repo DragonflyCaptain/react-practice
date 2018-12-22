@@ -2,10 +2,9 @@
  * @Author: zhuyu 
  * @Date: 2018-12-14 12:00:12 
  * @Last Modified by: zhuyu
- * @Last Modified time: 2018-12-14 18:38:10
+ * @Last Modified time: 2018-12-17 16:14:47
  */
-export async function debounce ( fn, delay, immediate){
-    console.log('222',delay,immediate)
+export const debounce = function( fn, delay, immediate){
     let timeout, result;
     return function(){
         let context = this;
@@ -24,8 +23,4 @@ export async function debounce ( fn, delay, immediate){
         }
         return result;
     }
-}
-
-export const a = function (){
-    console.log('----');
 }
