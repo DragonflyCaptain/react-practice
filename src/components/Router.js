@@ -2,11 +2,11 @@
  * @Author: zhuyu 
  * @Date: 2018-12-13 17:12:45 
  * @Last Modified by: zhuyu
- * @Last Modified time: 2018-12-21 16:32:44
+ * @Last Modified time: 2018-12-24 18:52:39
  */
 
 import React from 'react';
-import { HashRouter as Router, Route, Switch} from 'react-router-dom';
+import { HashRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
 
 import Login from './login';
 import Movie from '../page/movie/index';
@@ -17,7 +17,6 @@ const BasicRoute = () => (
     <Router>
         <Switch>
             <Route path="/Login" component={Login} />
-            {/* <Route exact path="/" component={Home} /> */}
             <Route path="/" render = { props => (
                 <Laout>
                     <Switch>
@@ -26,6 +25,7 @@ const BasicRoute = () => (
                     </Switch>
                 </Laout>
             )}/>
+            {/* <Route exact path="/" render={() => (localStorage.getItem('userName') ? (<Redirect to={{ pathname: '/' }} />) : (<Redirect to={{ pathname: '/Login' }} />))} /> */}
         </Switch>
     </Router>
 );
