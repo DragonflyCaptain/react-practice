@@ -11,7 +11,7 @@ export default class Home extends React.Component {
     render() {
         return (
             <div>
-                <span>two</span>
+                <span>two11</span>
             </div>
         )
     }
