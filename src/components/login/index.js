@@ -2,16 +2,18 @@
  * @Author: zhuyu 
  * @Date: 2018-12-14 10:57:11 
  * @Last Modified by: zhuyu
- * @Last Modified time: 2018-12-21 14:15:30
+ * @Last Modified time: 2018-12-26 15:08:14
  */
 
 import React,{ Component } from 'react';
 
 
 import { Input, Button, Icon, message } from 'antd';
+import createHistory from 'history/createHashHistory';
 
 import './index.css';
 // import {debounce} from '../debounce/index';
+const history = createHistory();
 class Login extends Component{
     constructor(props){
         super(props)

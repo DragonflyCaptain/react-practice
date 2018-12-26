@@ -17,7 +17,7 @@ export default class Home extends React.Component {
     }
     componentDidMount(){
       if(!sessionStorage.userName){
-          history.push('/Login')
+          history.push('/login')
       }
       this.fetchOne(0,10)
     }
