@@ -2,18 +2,15 @@
  * @Author: zhuyu 
  * @Date: 2018-12-14 10:57:11 
  * @Last Modified by: zhuyu
- * @Last Modified time: 2018-12-26 15:08:14
+ * @Last Modified time: 2018-12-27 17:15:09
  */
 
 import React,{ Component } from 'react';
 
 
 import { Input, Button, Icon, message } from 'antd';
-import createHistory from 'history/createHashHistory';
 
 import './index.css';
-// import {debounce} from '../debounce/index';
-const history = createHistory();
 class Login extends Component{
     constructor(props){
         super(props)
@@ -62,7 +59,7 @@ class Login extends Component{
       const { userName,passWord } = this.state;
       // console.log(a,debounce);
       return(
-        <div>
+        <div className="bg">
           <div className="box" onKeyDown={(e)=>this.keyDown(e)}>
 
             <div className="div">
@@ -92,10 +89,10 @@ class Login extends Component{
               />
             </div>
 
-            <div className="tip">
+            {/* <div className="tip">
               <span style={{marginLeft:85}}>用户名:guest</span>
               <span style={{marginLeft:80}}>密码:admin</span>
-            </div>
+            </div> */}
 
             <div>
               <Button className="btn" loading={this.state.loading} onClick={()=>this.login()}>登录</Button>

@@ -1,18 +1,15 @@
-.ul{
-    list-style: none;
-    text-align: center;
-    padding: 0;
-    margin-bottom: 0;
-    text-decoration:none;
+.userPhoto{
+    width: 200px;
+    height: 100px;
+    background: #e6e6e6;
 }
-.ul li{
-    height: 40px;
-    background: orange;
-    margin-top: 10px;
-    color: black;
-    text-decoration:none;
-    line-height: 40px;
-}
-.ul li:hover{
-    background: cyan;
+.radius{
+    width: 100px;
+    height: 100px;
+    /* background: red; */
+    border-radius: 50%;
+    margin-left: 50px;
+    background-image: url('../../../image/PDD.png');
+    background-size: 100%;
+
 }

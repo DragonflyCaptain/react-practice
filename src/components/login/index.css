@@ -2,22 +2,31 @@
  * @Author: zhuyu 
  * @Date: 2018-12-14 11:09:38 
  * @Last Modified by: zhuyu
- * @Last Modified time: 2018-12-14 17:31:53
+ * @Last Modified time: 2018-12-27 17:12:21
  */
+
+ .bg{
+   width: auto;
+   height: 100%;
+   background: url('../../image/header-bg.jpg');
+   background-size: 100%;
+   background-repeat: no-repeat;
+   
+ }
 
  .box{
   width: 500px;
   height: 300px;
-  background-image: url('../../image/header-bg.jpg');
+  /* background-image: url('../../image/header-bg.jpg'); */
   position: absolute;
   left: 0;
   bottom: 200px;
   top: 0px;
   right: 0;
   margin: auto;
-  /* border: 1px solid black; */
-  background-size: 100%;
-  background-repeat: no-repeat;
+  /* border: 1px solid #e6e6e6; */
+  /* opacity: 0.7; */
+  /* background: white; */
  }
  .div{
    margin-left: 85px;
@@ -37,6 +46,14 @@
 }
 .btn{
   width: 250px;
-  margin-left: 160px;
+  margin-left: 157px;
   margin-top: 20px;
+  background-color: #1890ff;
+  border: 1px solid #1890ff;
+  color: white;
+}
+.btn:hover{
+  background-color: #1890ff;
+  color: white;
+  border: 1px solid #1890ff;
 }

@@ -2,11 +2,13 @@
  * @Author: zhuyu 
  * @Date: 2018-12-13 17:11:49 
  * @Last Modified by: zhuyu
- * @Last Modified time: 2018-12-26 11:06:51
+ * @Last Modified time: 2018-12-27 18:06:35
  */
 
 import React, { Component } from 'react';
 import { message } from 'antd';
+import moment from 'moment';
+import 'moment/locale/zh-hk';
 //css
 import './App.css';
 
@@ -17,6 +19,7 @@ message.config({
   duration: 1,
   maxCount: 1,
 });
+moment.locale('zh-hk'); // moment时间插件全局语言设置
 
 class App extends Component {
   render() {

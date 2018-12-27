@@ -1,10 +1,10 @@
 import React from 'react';
-import createHistory from 'history/createHashHistory';
-import { Button } from 'antd';
-import * as axios from 'axios';
+// import createHistory from 'history/createHashHistory';
+// import { Button } from 'antd';
+// import * as axios from 'axios';
 import './index.css';
 
-const history = createHistory();
+// const history = createHistory();
 
 
 export default class Home extends React.Component {
@@ -25,8 +25,7 @@ export default class Home extends React.Component {
         return (
             <div>
                 <div>
-                    <h2>EEEEEEEE</h2>
-                    <Button>123123</Button>
+                    <h1>主页</h1>
                 </div>
             </div>
         )

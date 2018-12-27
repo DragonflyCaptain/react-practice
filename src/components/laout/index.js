@@ -1,16 +1,14 @@
 import React from 'react';
 
 import { Layout } from 'antd';
+import moment from 'moment';
 
 import SiderNav from './sider/index';
 import HeaderDiy from './header/index';
-import Login from '../login/index';
-import createHistory from 'history/createHashHistory';
 const {
     Header, Footer, Sider, Content,
   } = Layout;
 
-  const history = createHistory();
 export default class Laout extends React.Component{
     constructor(props){
         super(props)
@@ -26,17 +24,17 @@ export default class Laout extends React.Component{
     render(){
         return this.state.isLogin?(
             <Layout style={{height:'100%'}}>
-                <Sider>
+                <Sider style={{background: 'white'}}>
                     <SiderNav/>
                 </Sider>
                 <Layout>
-                    <Header>
+                    <Header style={{background: 'orange',height: 100}}>
                         <HeaderDiy/>
                     </Header>
                     <Content>
                         {this.props.children}
                     </Content>
-                    <Footer style={{textAlign:'center'}}>2018-12-21</Footer>
+                    <Footer style={{textAlign:'center'}}>{moment().format('MMMM Do YYYY')}</Footer>
                 </Layout>
             </Layout>
         ):<div>iiiiii</div>

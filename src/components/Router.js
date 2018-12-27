@@ -2,16 +2,19 @@
  * @Author: zhuyu 
  * @Date: 2018-12-13 17:12:45 
  * @Last Modified by: zhuyu
- * @Last Modified time: 2018-12-26 17:26:53
+ * @Last Modified time: 2018-12-27 18:27:16
  */
 
 import React from 'react';
 import { HashRouter as Router, Route, Switch} from 'react-router-dom';
 
 import Login from './login/index';
-import Movie from '../page/movie/index';
+import Home from '../page/home/index';
 import Laout from './laout/index';
-import Detail from '../page/detail'
+import One from '../page/one/index';
+import Two from '../page/two/index';
+import Three from '../page/three/index';
+import Four from '../page/four/index';
 
 const BasicRoute = () => (
     <Router>
@@ -20,8 +23,11 @@ const BasicRoute = () => (
             <Route path='/' render = { props => (
                 <Laout routeProps = {props}>
                     <Switch>
-                        <Route exact path="/" component={ Movie } />
-                        <Route  path="/test" component={ Detail } />
+                        <Route exact path="/" component={ Home } />
+                        <Route  path="/one" component={ One } />
+                        <Route  path="/two" component={ Two } />
+                        <Route  path="/three" component={ Three } />
+                        <Route  path="/four" component={ Four } />
                     </Switch>
                 </Laout>
             )}/>
