@@ -31,7 +31,7 @@ export default class Laout extends React.Component{
                     <Header style={{background: 'orange',height: 100}}>
                         <HeaderDiy/>
                     </Header>
-                    <Content>
+                    <Content style={{overflow:'auto'}}>
                         {this.props.children}
                     </Content>
                     <Footer style={{textAlign:'center'}}>{moment().format('MMMM Do YYYY')}</Footer>

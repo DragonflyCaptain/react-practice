@@ -1,10 +1,12 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Menu, Icon } from 'antd';
+import createHistory from 'history/createHashHistory';
 
 import './index.css';
 
 const SubMenu = Menu.SubMenu;
+const history = createHistory();
 class SiderNav extends React.Component{
     rootSubmenuKeys = ['sub1', 'sub2', 'sub4'];
     constructor(props){
@@ -24,13 +26,14 @@ class SiderNav extends React.Component{
             });
         }
     }
+    logOut(){
+        history.push('/login');
+    }
     render(){
         return(
             <div>
                 <div className="userPhoto">
-                    <div className="radius">
-
-                    </div>
+                    <div className="radius" onClick={()=>this.logOut()}></div>
                 </div>
                 <Menu
                     mode="inline"
