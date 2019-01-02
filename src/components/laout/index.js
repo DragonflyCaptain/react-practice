@@ -28,9 +28,9 @@ export default class Laout extends React.Component{
                     <SiderNav/>
                 </Sider>
                 <Layout>
-                    <Header style={{background: 'orange',height: 100}}>
+                    {/* <Header style={{background: 'orange',height: 100}}>
                         <HeaderDiy/>
-                    </Header>
+                    </Header> */}
                     <Content style={{overflow:'auto'}}>
                         {this.props.children}
                     </Content>

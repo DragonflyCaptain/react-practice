@@ -43,7 +43,7 @@ class SiderNav extends React.Component{
                 >
                     <SubMenu key="sub1" title={<span><Icon type="mail" /><span>Navigation One</span></span>}>
                         <Menu.Item key="1">
-                            <NavLink to="/" replace>主页</NavLink>
+                            <NavLink to="/" replace>Home</NavLink>
                         </Menu.Item>
                         <Menu.Item key="2">
                             <NavLink to="/one" replace>one</NavLink>

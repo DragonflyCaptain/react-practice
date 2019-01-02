@@ -2,7 +2,7 @@
  * @Author: zhuyu 
  * @Date: 2018-12-13 17:12:45 
  * @Last Modified by: zhuyu
- * @Last Modified time: 2018-12-27 18:27:16
+ * @Last Modified time: 2019-01-02 16:06:28
  */
 
 import React from 'react';
@@ -13,7 +13,7 @@ import Home from '../page/home/index';
 import Laout from './laout/index';
 import One from '../page/one/index';
 import Two from '../page/two/index';
-import Three from '../page/three/index';
+import rotatePhotos from '../page/three/index';
 import Four from '../page/four/index';
 
 const BasicRoute = () => (
@@ -26,7 +26,7 @@ const BasicRoute = () => (
                         <Route exact path="/" component={ Home } />
                         <Route  path="/one" component={ One } />
                         <Route  path="/two" component={ Two } />
-                        <Route  path="/three" component={ Three } />
+                        <Route  path="/three" component={ rotatePhotos } />
                         <Route  path="/four" component={ Four } />
                     </Switch>
                 </Laout>
