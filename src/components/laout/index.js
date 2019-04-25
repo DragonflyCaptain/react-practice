@@ -4,9 +4,12 @@ import { Layout } from 'antd';
 import moment from 'moment';
 
 import SiderNav from './sider/index';
-import HeaderDiy from './header/index';
+// import HeaderDiy from './header/index';
 const {
-    Header, Footer, Sider, Content,
+    // Header, 
+    Footer, 
+    Sider, 
+    Content,
   } = Layout;
 
 export default class Laout extends React.Component{
@@ -28,15 +31,15 @@ export default class Laout extends React.Component{
                     <SiderNav/>
                 </Sider>
                 <Layout>
-                    <Header style={{background: 'orange',height: 100}}>
+                    {/* <Header style={{background: 'orange',height: 100}}>
                         <HeaderDiy/>
-                    </Header>
+                    </Header> */}
                     <Content style={{overflow:'auto'}}>
                         {this.props.children}
                     </Content>
                     <Footer style={{textAlign:'center'}}>{moment().format('MMMM Do YYYY')}</Footer>
                 </Layout>
             </Layout>
-        ):<div>iiiiii</div>
+        ):<div>显示时间错误!</div>
     }
 }

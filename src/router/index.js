@@ -1,16 +1,9 @@
-/*
- * @Author: zhuyu 
- * @Date: 2018-12-13 17:12:45 
- * @Last Modified by: zhuyu
- * @Last Modified time: 2018-12-27 18:27:16
- */
-
 import React from 'react';
 import { HashRouter as Router, Route, Switch} from 'react-router-dom';
 
-import Login from './login/index';
+import Login from '../components/login/index';
 import Home from '../page/home/index';
-import Laout from './laout/index';
+import Laout from '../components/laout/index';
 import One from '../page/one/index';
 import Two from '../page/two/index';
 import Three from '../page/three/index';

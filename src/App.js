@@ -13,7 +13,7 @@ import 'moment/locale/zh-hk';
 import './App.css';
 
 //
-import Router from './components/Router';
+import Router from './router/index';
 message.config({
   top: 150,
   duration: 1,
