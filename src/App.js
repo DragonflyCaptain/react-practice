@@ -11,7 +11,6 @@ import moment from 'moment';
 import 'moment/locale/zh-hk';
 //css
 import './App.css';
-import '@alifd/next/dist/next.css';
 
 //
 import Router from './router/index';
