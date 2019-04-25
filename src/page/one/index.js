@@ -12,6 +12,7 @@ export default class One extends React.Component {
             <div>
                 <div>
                     <h1>one</h1>
+                    <a href="https://dragonflycaptain.github.io/">跳转到博客</a>
                 </div>
             </div>
         )
