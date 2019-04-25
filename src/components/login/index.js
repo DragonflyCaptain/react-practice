@@ -2,7 +2,7 @@
  * @Author: zhuyu 
  * @Date: 2018-12-14 10:57:11 
  * @Last Modified by: zhuyu
- * @Last Modified time: 2018-12-27 17:15:09
+ * @Last Modified time: 2019-01-13 13:24:01
  */
 
 import React,{ Component } from 'react';
@@ -20,6 +20,7 @@ class Login extends Component{
           login: true,
           loading: false,
         }
+        console.log('2222PPPP',this.props)
     }
     componentDidMount(){
       let login = sessionStorage.getItem('login');

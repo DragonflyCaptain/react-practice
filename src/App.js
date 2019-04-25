@@ -2,7 +2,7 @@
  * @Author: zhuyu 
  * @Date: 2018-12-13 17:11:49 
  * @Last Modified by: zhuyu
- * @Last Modified time: 2018-12-27 18:06:35
+ * @Last Modified time: 2019-02-26 14:13:21
  */
 
 import React, { Component } from 'react';
@@ -11,6 +11,7 @@ import moment from 'moment';
 import 'moment/locale/zh-hk';
 //css
 import './App.css';
+import '@alifd/next/dist/next.css';
 
 //
 import Router from './router/index';

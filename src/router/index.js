@@ -6,7 +6,7 @@ import Home from '../page/home/index';
 import Laout from '../components/laout/index';
 import One from '../page/one/index';
 import Two from '../page/two/index';
-import Three from '../page/three/index';
+import rotatePhotos from '../page/three/index';
 import Four from '../page/four/index';
 
 const BasicRoute = () => (
@@ -19,7 +19,7 @@ const BasicRoute = () => (
                         <Route exact path="/" component={ Home } />
                         <Route  path="/one" component={ One } />
                         <Route  path="/two" component={ Two } />
-                        <Route  path="/three" component={ Three } />
+                        <Route  path="/three" component={ rotatePhotos } />
                         <Route  path="/four" component={ Four } />
                     </Switch>
                 </Laout>
