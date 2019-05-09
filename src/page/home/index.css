@@ -1,9 +1,69 @@
-#home{
-    /* position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    margin: 0 auto; */
-    text-align: center;
+#screening{
+    margin-bottom: 36px;
+}
+.ui-slide-control{
+    float: right;
+    margin: 5px 0 0 15px;
+}
+.slide-tip{
+    float: right;
+    line-height: 30px;
+    color: #666;
+}
+.screening-hd h2{
+    color: #111;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eaeaea;
+    margin-bottom: 18px;
+    font-size: 16px;
+    font: 15px Arial, Helvetica, sans-serif;
+    margin: 0 0 12px 0;
+    line-height: 50%;
+}
+.screening-hd span{
+    font-size: 12px;
+}
+.ui-slide-control .btn-prev{
+    background-position: 0 0;
+}
+.ui-slide-control a{
+    display: block;
+    float: left;
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+    cursor: pointer;
+    background: url(https://img3.doubanio.com/f/movie/708be21a7bb2d0f21419dc4e2e2fde8b21ad661a/pics/movie/slide_swithc_2.png) no-repeat;
+}
+.ui-slide-control .btn-next{
+    background-position: -18px 0;
+}
+a:visited{
+    color: #666699;
+    text-decoration: none;
+}
+a:link{
+    color: #37a;
+    text-decoration: none;
+}
+a:visited{
+    color: #669;
+    text-decoration: none;
+}
+
+.screening-bd{
+    overflow: hidden;
+    position: relative;
+    height: 270px;
+}
+#screening .ui-slide-content{
+    position: absolute;
+
+}
+.ui-slide-content{
+    white-space: nowrap;
+    margin: 0;
+    padding: 0;
+    letter-spacing: -0.31em;
+    font-size: 0;
 }

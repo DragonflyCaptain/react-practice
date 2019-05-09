@@ -4,7 +4,6 @@ export default class One extends React.Component {
     constructor(props){
         super(props)
         this.state={
-            
         }
     }
     render() {
