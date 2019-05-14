@@ -1,26 +1,22 @@
 import React from 'react';
 import { HashRouter as Router, Route, Switch} from 'react-router-dom';
-
-import Login from '../components/login/index';
-import Home from '../page/home/index';
 import Laout from '../components/laout/index';
 import One from '../page/one/index';
 import Two from '../page/two/index';
-import rotatePhotos from '../page/three/index';
-import Four from '../page/four/index';
+
+import RouterConfig from './routerConfig';
 
 const BasicRoute = () => (
     <Router>
         <Switch>
-            <Route path="/login" component={Login} />
+            <Route path={RouterConfig.LoginPage.path} component={RouterConfig.LoginPage.component} />
             <Route path='/' render = { props => (
                 <Laout routeProps = {props}>
                     <Switch>
-                        <Route exact path="/" component={ Home } />
+                        <Route exact path={RouterConfig.HomePage.path} component={ RouterConfig.HomePage.component } />
                         <Route  path="/one" component={ One } />
                         <Route  path="/two" component={ Two } />
-                        <Route  path="/three" component={ rotatePhotos } />
-                        <Route  path="/four" component={ Four } />
+                        <Route  path={RouterConfig.RotatePhotosPage.path} component={ RouterConfig.RotatePhotosPage.component } />
                     </Switch>
                 </Laout>
             )}/>

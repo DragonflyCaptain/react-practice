@@ -4,6 +4,7 @@ import { Menu, Icon } from 'antd';
 import createHistory from 'history/createHashHistory';
 
 import './index.css';
+import RouterPath from '../../../router/routerPath';
 
 const SubMenu = Menu.SubMenu;
 const history = createHistory();
@@ -35,54 +36,19 @@ class SiderNav extends React.Component{
                 <div className="userPhoto">
                     <div className="radius" onClick={()=>this.logOut()}></div>
                 </div>
+
                 <Menu
                     mode="inline"
                     openKeys={this.state.openKeys}
                     onOpenChange={this.onOpenChange}
                     style={{ width: 200,marginTop: 30, height: '100%' }}
                 >
+                    <Menu.Item key="1">
+                            <NavLink to={RouterPath.Home} replace><Icon type="home" theme="filled" />Home</NavLink>
+                    </Menu.Item>
                     <SubMenu key="sub1" title={<span><Icon type="mail" /><span>Navigation One</span></span>}>
-                        <Menu.Item key="1">
-                            <NavLink to="/" replace>Home</NavLink>
-                        </Menu.Item>
-                        <Menu.Item key="2">
-                            <NavLink to="/one" replace>one</NavLink>
-                        </Menu.Item>
-                        <Menu.Item key="3">
-                            <NavLink to="/two" replace>two</NavLink>                            
-                        </Menu.Item>
-                        <Menu.Item key="4">
-                            <NavLink to="/three" replace>three</NavLink>  
-                        </Menu.Item>
-                    </SubMenu>
-                    <SubMenu key="sub2" title={<span><Icon type="appstore" /><span>Navigation Two</span></span>}>
-                        <Menu.Item key="5">
-                            <NavLink to="/four" replace>four</NavLink>  
-                        </Menu.Item>
-                        <Menu.Item key="6">
-                            <NavLink to="/five" replace>five</NavLink>
-                        </Menu.Item>
-                    <SubMenu key="sub3" title="Submenu">
-                        <Menu.Item key="7">
-                            <NavLink to="/six" replace>six</NavLink>
-                        </Menu.Item>
-                        <Menu.Item key="8">
-                            <NavLink to="/seven" replace>seven</NavLink>
-                        </Menu.Item>
-                    </SubMenu>
-                    </SubMenu>
-                    <SubMenu key="sub4" title={<span><Icon type="setting" /><span>Navigation Three</span></span>}>
-                        <Menu.Item key="9">
-                            <NavLink to="/eight" replace>eight</NavLink>
-                        </Menu.Item>
-                        <Menu.Item key="10">
-                            <NavLink to="/nine" replace>nine</NavLink>
-                        </Menu.Item>
-                        <Menu.Item key="11">
-                            <NavLink to="/ten" replace>ten</NavLink>
-                        </Menu.Item>
-                        <Menu.Item key="12">
-                            <NavLink to="/eleven" replace>eleven</NavLink>
+                        <Menu.Item key="sub1-1">
+                            <NavLink to={RouterPath.RotatePhotos} replace>RotatePhotos</NavLink>
                         </Menu.Item>
                     </SubMenu>
                 </Menu>
