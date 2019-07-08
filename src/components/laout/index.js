@@ -6,16 +6,16 @@ import moment from 'moment';
 import SiderNav from './sider/index';
 // import HeaderDiy from './header/index';
 const {
-    // Header, 
-    Footer, 
-    Sider, 
+    // Header,
+    Footer,
+    Sider,
     Content,
   } = Layout;
 
 export default class Laout extends React.Component{
     constructor(props){
         super(props)
-        this.state={
+        this.state = {
             isLogin: sessionStorage.userName
         }
     }

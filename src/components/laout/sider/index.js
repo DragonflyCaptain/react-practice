@@ -1,13 +1,12 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Menu, Icon } from 'antd';
-import createHistory from 'history/createHashHistory';
-
-import './index.css';
-import RouterPath from '../../../router/routerPath';
+// import createHistory from 'history/createHashHistory';
+import { routerConfig } from '../../../router/routerPath';
+import './index.less';
 
 const SubMenu = Menu.SubMenu;
-const history = createHistory();
+// const history = createHistory();
 class SiderNav extends React.Component{
     rootSubmenuKeys = ['sub1', 'sub2', 'sub4'];
     constructor(props){
@@ -17,6 +16,34 @@ class SiderNav extends React.Component{
         }
     }
 
+    mapChild(data){
+        return data.map(item=>{
+            return (
+                <Menu.Item key={item.key}>
+                    <NavLink to={item.path} replace>{item.name}</NavLink>
+                </Menu.Item>
+            )
+        })
+    }
+
+    MapTest = (routerConfig) => {
+        return routerConfig.map(item => {
+            if(item.children){
+                return (
+                    <SubMenu key={item.key} title={<span><Icon type={item.icon} theme="twoTone" /><span>{item.name}</span></span>}>
+                        {this.mapChild(item.children)}
+                    </SubMenu>
+                )
+            }else{
+                return (
+                    <Menu.Item key={item.key}>
+                            <NavLink to={item.path} replace  ><Icon type={item.icon} />{item.name}</NavLink>
+                    </Menu.Item>
+                )
+            }
+        })
+    }
+
     onOpenChange = (openKeys) => {
         const latestOpenKey = openKeys.find(key => this.state.openKeys.indexOf(key) === -1);
         if (this.rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
@@ -24,11 +51,11 @@ class SiderNav extends React.Component{
         } else {
             this.setState({
             openKeys: latestOpenKey ? [latestOpenKey] : [],
-            });
+            })
         }
     }
     logOut(){
-        history.push('/login');
+        this.props.history.push('/login');
     }
     render(){
         return(
@@ -43,14 +70,7 @@ class SiderNav extends React.Component{
                     onOpenChange={this.onOpenChange}
                     style={{ width: 200,marginTop: 30, height: '100%' }}
                 >
-                    <Menu.Item key="1">
-                            <NavLink to={RouterPath.Home} replace><Icon type="home" theme="filled" />Home</NavLink>
-                    </Menu.Item>
-                    <SubMenu key="sub1" title={<span><Icon type="mail" /><span>Navigation One</span></span>}>
-                        <Menu.Item key="sub1-1">
-                            <NavLink to={RouterPath.RotatePhotos} replace>RotatePhotos</NavLink>
-                        </Menu.Item>
-                    </SubMenu>
+                    {this.MapTest(routerConfig)}
                 </Menu>
             </div>
         )
