@@ -1,14 +1,14 @@
-import {routerPath} from './routerPath';
+import { routerPath } from './routerPath';
 
 // const Home      = lazy( () => import('../containers/counter'))
 // const LoginPage = lazy(() => import('../containers/login'));
 // const TodoList  = lazy( () => import('../containers/todoList'))
-import HomePage             from '../page/home';
-import LoginPage            from '../components/login';
-import RotatePhotosPage     from '../page/rotatingPhoto';
-import QuestionTablePage    from '../page/question/table';
-import MapPage              from '../page/map';
-import { HooksBasic }       from '../page/hooks'
+import HomePage from '../page/home';
+import LoginPage from '../components/login';
+import RotatePhotosPage from '../page/rotatingPhoto';
+import QuestionTablePage from '../page/question/table';
+import MapPage from '../page/map';
+import { HooksBasic } from '../page/hooks'
 
 
 

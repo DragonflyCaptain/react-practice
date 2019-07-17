@@ -1,8 +1,8 @@
-import React from 'react';
-import './index.css';
+import React from 'react'
+import './index.css'
 
 class Header extends React.Component {
-  render () {
+  render() {
     return (
       <div>
         <div className="background">

@@ -1,10 +1,10 @@
 export const routerPath = {
-    Home                    : "/",
-    Login                   : '/login',
-    RotatePhotos            : '/rotatephotos',
-    QuestionTable           : '/question/table',
-    Map                     : '/basicmap',
-    Hook                    : '/hooks'
+    Home: "/",
+    Login: '/login',
+    RotatePhotos: '/rotatephotos',
+    QuestionTable: '/question/table',
+    Map: '/basicmap',
+    Hook: '/hooks'
 }
 
 export const routerConfig = [
@@ -13,7 +13,7 @@ export const routerConfig = [
         path: routerPath.Home,
         key: '1',
         icon: 'dashboard'
-    },{
+    }, {
         name: 'Photo',
         key: '2',
         icon: 'smile',
@@ -24,7 +24,7 @@ export const routerConfig = [
                 name: 'RotatePhotos'
             }
         ]
-    },{
+    }, {
         name: 'question',
         key: '3',
         icon: 'smile',
@@ -35,8 +35,8 @@ export const routerConfig = [
                 name: 'QuestionTable'
             }
         ]
-    },{
-        name: 'mapList',
+    }, {
+        name: 'map',
         key: '4',
         icon: 'smile',
         children: [
@@ -46,7 +46,7 @@ export const routerConfig = [
                 name: 'Map'
             }
         ]
-    },{
+    }, {
         name: 'Hook',
         key: '5',
         icon: 'facebook',

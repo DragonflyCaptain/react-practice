@@ -1,23 +1,18 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { Menu, Icon } from 'antd';
-// import createHistory from 'history/createHashHistory';
-import { routerConfig } from '../../../router/routerPath';
-import './index.less';
+import React, { useState } from 'react'
+import { NavLink } from 'react-router-dom'
+import { Menu, Icon } from 'antd'
+import { routerConfig } from '../../../router/routerPath'
+import history from '../../../history'
+import './index.less'
 
-const SubMenu = Menu.SubMenu;
-// const history = createHistory();
-class SiderNav extends React.Component{
-    rootSubmenuKeys = ['sub1', 'sub2', 'sub4'];
-    constructor(props){
-        super(props)
-        this.state={
-            openKeys: ['sub1'],
-        }
-    }
+const SubMenu = Menu.SubMenu
 
-    mapChild(data){
-        return data.map(item=>{
+const siderNavCustom = (props) => {
+    console.log(props);
+    const rootSubmenuKeys = ['sub1', 'sub2', 'sub4']
+    const [openKeys, setOpenKeys] = useState(['sub1'])
+    const mapChild = (data) => {
+        return data.map(item => {
             return (
                 <Menu.Item key={item.key}>
                     <NavLink to={item.path} replace>{item.name}</NavLink>
@@ -25,55 +20,51 @@ class SiderNav extends React.Component{
             )
         })
     }
-
-    MapTest = (routerConfig) => {
+    const MapTest = (routerConfig) => {
         return routerConfig.map(item => {
-            if(item.children){
+            if (item.children) {
                 return (
                     <SubMenu key={item.key} title={<span><Icon type={item.icon} theme="twoTone" /><span>{item.name}</span></span>}>
-                        {this.mapChild(item.children)}
+                        {mapChild(item.children)}
                     </SubMenu>
                 )
-            }else{
+            } else {
                 return (
                     <Menu.Item key={item.key}>
-                            <NavLink to={item.path} replace  ><Icon type={item.icon} />{item.name}</NavLink>
+                        <NavLink to={item.path} replace  ><Icon type={item.icon} />{item.name}</NavLink>
                     </Menu.Item>
                 )
             }
         })
     }
-
-    onOpenChange = (openKeys) => {
-        const latestOpenKey = openKeys.find(key => this.state.openKeys.indexOf(key) === -1);
-        if (this.rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
-            this.setState({ openKeys });
+    const onOpenChange = (openKeys) => {
+        const latestOpenKey = openKeys.find(key => openKeys.indexOf(key) === -1)
+        if (rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
+            setOpenKeys(openKeys)
         } else {
-            this.setState({
-            openKeys: latestOpenKey ? [latestOpenKey] : [],
-            })
+            setOpenKeys(latestOpenKey ? [latestOpenKey] : [])
         }
     }
-    logOut(){
-        this.props.history.push('/login');
+    const logOut = () => {
+        history.push('/login')
     }
-    render(){
-        return(
-            <div>
-                <div className="userPhoto">
-                    <div className="radius" onClick={()=>this.logOut()}></div>
-                </div>
-
-                <Menu
-                    mode="inline"
-                    openKeys={this.state.openKeys}
-                    onOpenChange={this.onOpenChange}
-                    style={{ width: 200,marginTop: 30, height: '100%' }}
-                >
-                    {this.MapTest(routerConfig)}
-                </Menu>
+    return (
+        <div>
+            <div className="userPhoto">
+                <div className="radius" onClick={() => logOut()}></div>
             </div>
-        )
-    }
+
+            <Menu
+                mode="inline"
+                openKeys={openKeys}
+                onOpenChange={onOpenChange}
+                style={{ width: 200, marginTop: 30, height: '100%' }}
+            >
+                {MapTest(routerConfig)}
+            </Menu>
+        </div>
+    )
 }
-export default SiderNav
+
+
+export default siderNavCustom

@@ -5,15 +5,12 @@
  * @Last Modified time: 2019-02-26 14:13:21
  */
 
-import React, { Component } from 'react';
+import React from 'react';
 import { message } from 'antd';
 import moment from 'moment';
 import 'moment/locale/zh-hk';
-//css
-import './App.css';
-
-//
 import Router from './router/index';
+import './App.css';
 message.config({
   top: 150,
   duration: 1,
@@ -21,12 +18,10 @@ message.config({
 });
 moment.locale('zh-hk'); // moment时间插件全局语言设置
 
-class App extends Component {
-  render() {
-    return (
-      <Router />
-    );
-  }
+const App = () => {
+  return (
+    <Router />
+  )
 }
 
 export default App;

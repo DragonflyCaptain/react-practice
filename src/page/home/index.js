@@ -4,25 +4,20 @@
  * @Last Modified by: magua
  * @Last Modified time: 2019-07-08 21:52:50
  */
-import React from 'react'
+import React, { } from 'react'
+import { Button } from 'antd';
+import { requestGET } from '../../request'
 import './index.css'
-const data = [0,1,2,3,4,5,6,7,8,9]
-export default class Home extends React.Component{
 
-  testMap(){
-    let arr = []
-    data.forEach((item, index)=>{
-      arr.push(
-        <div key={index}>{item}</div>
-      )
-    })
+function Home() {
+  const testClick = async () => {
+    const { data } = await requestGET('/mock')
+    console.log(data);
   }
-
-  render(){
-    return(
-      <div>
-        <div>{()=>this.testMap()}</div>
-      </div>
-    )
-  }
+  return (
+    <div>
+      <Button onClick={testClick}>点击模拟数据</Button>
+    </div>
+  )
 }
+export default Home
